@@ -1,0 +1,285 @@
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .construction-carousel-section {
+            width: 100%;
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #222;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        /* Carousel Container */
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        /* Image Box Styles */
+        .image-box {
+            flex: 0 0 calc(100% / 3);
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .image-box-inner {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .image-box-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .image-box-content {
+            padding: 20px;
+        }
+        
+        .image-box-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        .image-box-description {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        /* Navigation Arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .carousel-arrow:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .carousel-arrow-left {
+            left: 20px;
+        }
+        
+        .carousel-arrow-right {
+            right: 20px;
+        }
+        
+        .arrow-icon {
+            width: 20px;
+            height: 20px;
+            border-top: 3px solid #333;
+            border-right: 3px solid #333;
+        }
+        
+        .arrow-left {
+            transform: rotate(-135deg);
+            margin-left: 5px;
+        }
+        
+        .arrow-right {
+            transform: rotate(45deg);
+            margin-right: 5px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .image-box {
+                flex: 0 0 50%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .image-box {
+                flex: 0 0 100%;
+            }
+            
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+
+    <section class="construction-carousel-section">
+        <div class="section-title">
+            <h2>Our Construction Services</h2>
+            <p>We provide comprehensive construction solutions for residential and commercial projects</p>
+        </div>
+        
+        <div class="carousel-container">
+            <button class="carousel-arrow carousel-arrow-left">
+                <div class="arrow-icon arrow-left"></div>
+            </button>
+            
+            <div class="carousel-wrapper">
+                <!-- Image Box 1 -->
+                <div class="image-box">
+                    <div class="image-box-inner">
+                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/4289395.jpg.webp" alt="Construction Service" class="image-box-img">
+                        <div class="image-box-content">
+                            <h3 class="image-box-title">Residential Construction</h3>
+                            <p class="image-box-description">We build beautiful, durable homes tailored to your specific needs and preferences.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image Box 2 -->
+                <div class="image-box">
+                    <div class="image-box-inner">
+                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/RoofingInstall2.jpg" alt="Roofing Service" class="image-box-img">
+                        <div class="image-box-content">
+                            <h3 class="image-box-title">Roofing Installation</h3>
+                            <p class="image-box-description">Professional roofing services that protect your property from the elements.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image Box 3 -->
+                <div class="image-box">
+                    <div class="image-box-inner">
+                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/Homeinteriorrenovation-GettyImages-892372566-cc34a0e66c7f44bb8665f4d6088676da.jpg.webp" alt="Interior Renovation" class="image-box-img">
+                        <div class="image-box-content">
+                            <h3 class="image-box-title">Interior Renovation</h3>
+                            <p class="image-box-description">Transform your space with our expert interior design and renovation services.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image Box 4 -->
+                <div class="image-box">
+                    <div class="image-box-inner">
+                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/pexels-skitterphoto-1388944.jpg" alt="Construction Planning" class="image-box-img">
+                        <div class="image-box-content">
+                            <h3 class="image-box-title">Construction Planning</h3>
+                            <p class="image-box-description">Comprehensive planning services to ensure your project runs smoothly from start to finish.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-arrow carousel-arrow-right">
+                <div class="arrow-icon arrow-right"></div>
+            </button>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselWrapper = document.querySelector('.carousel-wrapper');
+            const imageBoxes = document.querySelectorAll('.image-box');
+            const prevButton = document.querySelector('.carousel-arrow-left');
+            const nextButton = document.querySelector('.carousel-arrow-right');
+            
+            let currentIndex = 0;
+            const itemsToShow = 3; // Number of items to show at once
+            
+            // Calculate the width of each item
+            function updateItemWidth() {
+                const containerWidth = document.querySelector('.carousel-container').offsetWidth;
+                const itemWidth = containerWidth / itemsToShow;
+                
+                imageBoxes.forEach(box => {
+                    box.style.flex = `0 0 ${itemWidth}px`;
+                });
+                
+                updateCarousel();
+            }
+            
+            // Update carousel position
+            function updateCarousel() {
+                const containerWidth = document.querySelector('.carousel-container').offsetWidth;
+                const itemWidth = containerWidth / itemsToShow;
+                const translateX = -currentIndex * itemWidth;
+                carouselWrapper.style.transform = `translateX(${translateX}px)`;
+            }
+            
+            // Next slide
+            function nextSlide() {
+                const maxIndex = imageBoxes.length - itemsToShow;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            }
+            
+            // Event listeners
+            prevButton.addEventListener('click', prevSlide);
+            nextButton.addEventListener('click', nextSlide);
+            
+            // Initialize on load
+            updateItemWidth();
+            
+            // Update on window resize
+            window.addEventListener('resize', updateItemWidth);
+        });
+    </script>
