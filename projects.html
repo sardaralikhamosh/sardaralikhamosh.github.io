@@ -383,52 +383,34 @@
             gap: 40px;
         }
         
-        .contact-form {
+        .contact-form-container {
             background-color: white;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .form-group {
-            margin-bottom: 20px;
+        .google-form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark);
-        }
-        
-        .form-control {
+        .google-form-wrapper {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
+            max-width: 640px;
+            margin: 0 auto;
         }
         
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 12px 30px;
+        .google-form-wrapper iframe {
+            width: 100%;
+            height: 959px;
             border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary);
-        }
-        
-        .btn:disabled {
-            background-color: var(--gray);
-            cursor: not-allowed;
+            border-radius: 8px;
         }
         
         .social-links {
@@ -454,26 +436,6 @@
         .social-link:hover {
             background-color: var(--primary);
             transform: translateY(-3px);
-        }
-        
-        /* Alert Styles */
-        .alert {
-            padding: 12px 20px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            display: none;
-        }
-        
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-        
-        .alert-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
         }
         
         /* Footer */
@@ -511,6 +473,24 @@
             
             .timeline-item:nth-child(even) .timeline-content::after {
                 left: -10px;
+            }
+            
+            .google-form-wrapper iframe {
+                height: 800px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .google-form-wrapper iframe {
+                height: 700px;
+            }
+            
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-content p {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -778,7 +758,7 @@
                 <h2>Get In Touch</h2>
             </div>
             <div class="contact-container">
-                <div class="contact-info">
+                <div class="contact-form-container">
                     <h3>Contact Information</h3>
                     <p>Feel free to reach out to me for research collaborations, web development projects, or discussions about NLP and low-resource language technology.</p>
                     <div class="contact-item" style="margin: 10px 0;">
@@ -814,34 +794,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Send Me a Message</h3>
-                    <div id="alertSuccess" class="alert alert-success">
-                        <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+                <div class="google-form-container">
+                    <div class="google-form-wrapper">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc4hWpl6NXWugwf7LduFdLozffY7oJAUlMvtU22wlru9PtGkA/viewform?embedded=true" width="640" height="959" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
                     </div>
-                    <div id="alertError" class="alert alert-error">
-                        <i class="fas fa-exclamation-circle"></i> There was an error sending your message. Please try again later.
-                    </div>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" class="form-control" required placeholder="Your Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" class="form-control" required placeholder="Enter Your Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="number" class="form-control" required placeholder="Enter Your Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" class="form-control" rows="5" required placeholder="Enter Your Message here"></textarea>
-                        </div>
-                        <button type="submit" id="submitBtn" class="btn">
-                            <span id="btnText">Submit</span>
-                            <span id="btnLoading" style="display: none;">
-                                <i class="fas fa-spinner fa-spin"></i> Submitting...
-                            </span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -854,72 +810,5 @@
             <p>Computer Science Researcher & Web Developer | Specializing in NLP, LLM, and Computational Modeling</p>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form elements
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const number = document.getElementById('number').value;
-            const message = document.getElementById('message').value;
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = document.getElementById('btnText');
-            const btnLoading = document.getElementById('btnLoading');
-            const alertSuccess = document.getElementById('alertSuccess');
-            const alertError = document.getElementById('alertError');
-            
-            // Hide previous alerts
-            alertSuccess.style.display = 'none';
-            alertError.style.display = 'none';
-            
-            // Show loading state
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline';
-            submitBtn.disabled = true;
-            
-            // Get current time for the email template
-            const now = new Date();
-            const time = now.toLocaleString();
-            
-            // Prepare data for sending - matching your email template variables
-            const formData = {
-                name: name,
-                email: email,
-                number: number,
-                message: message,
-                time: time
-            };
-            
-            // Send the email using EmailJS with your credentials
-            emailjs.send('service_kwro19r', 'template_4p6syct', formData)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    // Show success message
-                    alertSuccess.style.display = 'block';
-                    // Reset form
-                    document.getElementById('contactForm').reset();
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    // Show error message
-                    alertError.style.display = 'block';
-                })
-                .finally(function() {
-                    // Reset button state
-                    btnText.style.display = 'inline';
-                    btnLoading.style.display = 'none';
-                    submitBtn.disabled = false;
-                });
-        });
-
-        // Initialize EmailJS with your public key
-        (function(){
-            emailjs.init("NdIz7KiC83wz46Ou-");
-        })();
-    </script>
-    
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </body>
 </html>
