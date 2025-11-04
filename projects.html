@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sardar Ali - Computer Science Researcher & Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+        }
+        
+        .header-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .header-content p {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .personal-info {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            width: 150px;
+            color: var(--dark);
+        }
+        
+        /* Research Section */
+        .research-highlight {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .research-title {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .research-link {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .research-link:hover {
+            background-color: var(--primary);
+        }
+        
+        .acknowledgments {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+            border: 4px solid var(--secondary);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -10px;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-company {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-duties {
+            list-style-type: none;
+        }
+        
+        .timeline-duties li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .timeline-duties li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* Education Section */
+        .education-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .education-degree {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .education-institution {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+        
+        .education-courses {
+            margin-top: 15px;
+        }
+        
+        .education-courses h4 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .courses-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .course-tag {
+            background-color: var(--light);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-title {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .project-link {
+            display: inline-block;
+            color: var(--secondary);
+            text-decoration: none;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+        }
+        
+        .btn:disabled {
+            background-color: var(--gray);
+            cursor: not-allowed;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Alert Styles */
+        .alert {
+            padding: 12px 20px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .alert-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-content::after {
+                left: -10px;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <!-- Placeholder for profile image -->
+                <div class="profile-img-placeholder" style="width: 180px; height: 180px; border-radius: 50%; background-color: rgba(255,255,255,0.2); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;">
+                        <img src="photo-SARDAR-ALI.png" style="width: 180px; height: 180px; border-radius: 50%;">
+                </div>
+                <h1>Sardar Ali</h1>
+                <p>Computer Science Researcher & Web Developer</p>
+                <p>Specializing in NLP, LLM, and Computational Modeling</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Islamabad, Pakistan</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(+92) 3415336669 | (+92) 3145214774</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sardaralikhamosh@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a Computer Science researcher with a focus on NLP, LLM, and computational modeling. My research aims to bridge the gap in language technology for low-resource languages, particularly my native Burushaski language.</p>
+                    <p>As a web developer, I'm seeking a position with Next Generation Web Development where I can apply my advanced knowledge of web development with my leadership abilities to meet our beloved, valued client's needs and their desired expectations.</p>
+                    <p>Through which I will enhance the productivity of the company which associated with me.</p>
+                </div>
+                <div class="personal-info">
+                    <div class="info-item">
+                        <span class="info-label">Full Name:</span>
+                        <span>Sardar Ali Khmaosh</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Profession:</span>
+                        <span>Software Developer</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Nationality:</span>
+                        <span>Pakistani</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Mother Tongue:</span>
+                        <span>Burushaski Language</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Languages:</span>
+                        <span>English (Proficient), Urdu (Fluent)</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">ORCID:</span>
+                        <span><a href="https://orcid.org/0009-0002-0306-0474" target="_blank">0009-0002-0306-0474</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research & Publications</h2>
+            </div>
+            <div class="research-highlight">
+                <h3 class="research-title">Global PIQA: Evaluating Physical Commonsense Reasoning Across 100+ Languages and Cultures (v0.1)</h3>
+                <p>As a Computer Science researcher, this is truly a dream come true. My first research paper (preprint) is now publicly available on arXiv.org.</p>
+                <p>I had the privilege of contributing to the Multilingual Physical Reasoning Benchmark Dataset by creating and submitting the Burushaski benchmark dataset, proudly representing one of the most unique and low-resource languages of Gilgit-Baltistan, Pakistan.</p>
+                <p>This research is part of the 5th Multilingual Representation Learning (MRL) Workshop, a global collaboration involving 335 researchers from 65 countries.</p>
+                <p><strong>Abstract (summary):</strong> Global PIQA is a participatory commonsense reasoning benchmark covering over 100 languages and cultures. It includes 116 language varieties across five continents, 14 language families, and 23 writing systems. More than half of the examples reflect local foods, customs, and traditions. While state-of-the-art language models perform well overall, they show up to a 37% accuracy gap in low-resource languages. Global PIQA highlights that everyday cultural knowledge remains a key area for improvement in LLMs, beyond complex reasoning and expert knowledge.</p>
+                
+                <div class="acknowledgments">
+                    <h4>Acknowledgments</h4>
+                    <p>I sincerely thank Adv. Wazir Shafi Lala, Quwáț K. Sunny Lala, and Jamsheed Aly Figaar for their invaluable support during the Burushaski dataset scripting and development process.</p>
+                    <p>Special thanks to the lead authors Tyler A. Chang (University of California) and Catherine Arnett (EleutherAI) for their exceptional coordination, mentorship, and leadership throughout the Global PIQA initiative.</p>
+                </div>
+                
+                <a href="https://arxiv.org/a/ali_s_5.html" class="research-link" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Read the preprint on arXiv
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Work Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2021 - Present</div>
+                        <div class="timeline-company">WordPress Developer - SAP Communications</div>
+                        <ul class="timeline-duties">
+                            <li>WordPress Website Development</li>
+                            <li>Theme Customization</li>
+                            <li>C-Panel Management</li>
+                            <li>Database Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2020 – January 2021</div>
+                        <div class="timeline-company">SEO Expert & Web Developer - Eastern Services</div>
+                        <ul class="timeline-duties">
+                            <li>Web Designing & Development</li>
+                            <li>Weekly Backups</li>
+                            <li>Search Engine Optimization (SEO)</li>
+                            <li>Database Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2019 – December 2019</div>
+                        <div class="timeline-company">PHP Laravel Internship - Ideal Solution</div>
+                        <ul class="timeline-duties">
+                            <li>Creating Blade Forms</li>
+                            <li>Extracting ID's and Classes from Database</li>
+                            <li>Database Connectivity</li>
+                            <li>Adding & eliminating Web Pages</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Expertise</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-code"></i> WordPress Development</li>
+                        <li><i class="fas fa-search"></i> Search Engine Optimization (SEO)</li>
+                        <li><i class="fas fa-database"></i> Database Management</li>
+                        <li><i class="fas fa-shopping-cart"></i> Shopify Development</li>
+                        <li><i class="fas fa-paint-brush"></i> Frontend Development (HTML, CSS, Bootstrap, JavaScript)</li>
+                        <li><i class="fas fa-server"></i> Laravel Development</li>
+                        <li><i class="fas fa-code"></i> OOPS Programming</li>
+                        <li><i class="fas fa-file-code"></i> Syntax Writing (PHP, Java)</li>
+                        <li><i class="fas fa-brain"></i> NLP & LLM Research</li>
+                        <li><i class="fas fa-calculator"></i> Computational Modeling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-users"></i> Team Leadership</li>
+                        <li><i class="fas fa-comments"></i> Communication Skills</li>
+                        <li><i class="fas fa-tasks"></i> Project Management</li>
+                        <li><i class="fas fa-chart-line"></i> Marketing Strategies</li>
+                        <li><i class="fas fa-file-alt"></i> Report Development</li>
+                        <li><i class="fas fa-cogs"></i> Problem Solving</li>
+                        <li><i class="fas fa-globe"></i> Multilingual Research</li>
+                        <li><i class="fas fa-language"></i> Low-Resource Language Technology</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-item">
+                <div class="education-degree">MPhil (Computer Science)</div>
+                <div class="education-institution">Quaid e Azam University Islamabad</div>
+                <div class="education-courses">
+                    <h4>Courses Covered:</h4>
+                    <div class="courses-list">
+                        <span class="course-tag">Advanced Analysis of Algorithms</span>
+                        <span class="course-tag">Advanced Operating System</span>
+                        <span class="course-tag">Software Repositories Mining</span>
+                        <span class="course-tag">Computer Vision</span>
+                        <span class="course-tag">Software Quality Assurance and Testing</span>
+                        <span class="course-tag">Computational Modeling</span>
+                        <span class="course-tag">Social Network Analysis</span>
+                        <span class="course-tag">Information Retrieval Systems</span>
+                    </div>
+                </div>
+            </div>
+            <div class="education-item">
+                <div class="education-degree">Bachelor's (Computer Science)</div>
+                <div class="education-institution">Completed August 2024</div>
+                <div class="education-courses">
+                    <h4>Courses Covered:</h4>
+                    <div class="courses-list">
+                        <span class="course-tag">Software Engineering</span>
+                        <span class="course-tag">Database Management</span>
+                        <span class="course-tag">Assembly Languages</span>
+                        <span class="course-tag">C# Programming</span>
+                        <span class="course-tag">C++ Programming</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background-color: #f5f7fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projects & Websites</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Shinisa E-commerce</h3>
+                        <p>Developed a complete e-commerce platform with product listings, shopping cart, and payment integration.</p>
+                        <a href="https://shinisa.com" class="project-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Digicell International</h3>
+                        <p>Client showcase website with portfolio and testimonial sections.</p>
+                        <a href="https://digicellinternational.shinisa.com/our-happy-clients/" class="project-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Burushaski Language Dataset</h3>
+                        <p>Created and contributed the Burushaski benchmark dataset for the Global PIQA multilingual reasoning benchmark.</p>
+                        <a href="https://arxiv.org/a/ali_s_5.html" class="project-link" target="_blank">View Research</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out to me for research collaborations, web development projects, or discussions about NLP and low-resource language technology.</p>
+                    <div class="contact-item" style="margin: 10px 0;">
+                        <i class="fas fa-envelope"></i>
+                        <span>sardaralikhamosh@gmail.com</span>
+                    </div><br>
+                    <div class="contact-item" style="margin: 10px 0;">
+                        <i class="fas fa-phone"></i>
+                        <span>(+92) 3415336669 | (+92) 3145214774</span>
+                    </div>
+                    <div class="contact-item" style="margin: 20px 0;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Islamabad, Pakistan</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/sardaralikhamosh" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sardaralikhamosh" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.facebook.com/sardaralikham0sh/" class="social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sardarali_khamosh/" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@sardaralikhamoshofficial" class="social-link" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://orcid.org/0009-0002-0306-0474" class="social-link" target="_blank">
+                            <i class="fab fa-orcid"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <div id="alertSuccess" class="alert alert-success">
+                        <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+                    </div>
+                    <div id="alertError" class="alert alert-error">
+                        <i class="fas fa-exclamation-circle"></i> There was an error sending your message. Please try again later.
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-control" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" class="form-control" required placeholder="Enter Your Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="number" class="form-control" required placeholder="Enter Your Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" class="form-control" rows="5" required placeholder="Enter Your Message here"></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn" class="btn">
+                            <span id="btnText">Submit</span>
+                            <span id="btnLoading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Submitting...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Sardar Ali. All Rights Reserved.</p>
+            <p>Computer Science Researcher & Web Developer | Specializing in NLP, LLM, and Computational Modeling</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form elements
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const number = document.getElementById('number').value;
+            const message = document.getElementById('message').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const btnLoading = document.getElementById('btnLoading');
+            const alertSuccess = document.getElementById('alertSuccess');
+            const alertError = document.getElementById('alertError');
+            
+            // Hide previous alerts
+            alertSuccess.style.display = 'none';
+            alertError.style.display = 'none';
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            // Get current time for the email template
+            const now = new Date();
+            const time = now.toLocaleString();
+            
+            // Prepare data for sending - matching your email template variables
+            const formData = {
+                name: name,
+                email: email,
+                number: number,
+                message: message,
+                time: time
+            };
+            
+            // Send the email using EmailJS with your credentials
+            emailjs.send('service_kwro19r', 'template_4p6syct', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    // Show success message
+                    alertSuccess.style.display = 'block';
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    // Show error message
+                    alertError.style.display = 'block';
+                })
+                .finally(function() {
+                    // Reset button state
+                    btnText.style.display = 'inline';
+                    btnLoading.style.display = 'none';
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Initialize EmailJS with your public key
+        (function(){
+            emailjs.init("NdIz7KiC83wz46Ou-");
+        })();
+    </script>
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
+</html>
