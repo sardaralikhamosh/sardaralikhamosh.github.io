@@ -1,17 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Services Slider</title>
     <style>
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        *{
+            font-family: 'Roboto', sans-serif;
         }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
         .construction-carousel-section {
             width: 100%;
             padding: 60px 0;
@@ -25,13 +21,14 @@
         }
         
         .section-title h2 {
-            font-size: 36px;
+            font-size: 35px;
+            font-weight: 600;
             margin-bottom: 15px;
         }
         
         .section-title p {
-            font-size: 18px;
-            max-width: 700px;
+            font-size: 25px;
+            max-width: 600px;
             margin: 0 auto;
             color: #666;
         }
@@ -54,6 +51,7 @@
             flex: 0 0 calc(100% / 3);
             padding: 15px;
             transition: transform 0.3s ease;
+            box-sizing: border-box;
         }
         
         .image-box:hover {
@@ -80,14 +78,16 @@
         }
         
         .image-box-title {
-            font-size: 22px;
+            font-size: 25px;
+            font-weight: 600;
             margin-bottom: 10px;
             color: #222;
         }
         
         .image-box-description {
-            color: #666;
-            font-size: 16px;
+            font-weight: 400;
+            color: #333;
+            font-size: 20px;
         }
         
         /* Navigation Arrows */
@@ -144,6 +144,11 @@
             .image-box {
                 flex: 0 0 50%;
             }
+            
+            .carousel-arrow {
+                width: 45px;
+                height: 45px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -161,13 +166,9 @@
             }
         }
     </style>
-
+</head>
+<body>
     <section class="construction-carousel-section">
-        <div class="section-title">
-            <h2>Our Construction Services</h2>
-            <p>We provide comprehensive construction solutions for residential and commercial projects</p>
-        </div>
-        
         <div class="carousel-container">
             <button class="carousel-arrow carousel-arrow-left">
                 <div class="arrow-icon arrow-left"></div>
@@ -177,10 +178,10 @@
                 <!-- Image Box 1 -->
                 <div class="image-box">
                     <div class="image-box-inner">
-                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/4289395.jpg.webp" alt="Construction Service" class="image-box-img">
+                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/4289395.jpg.webp" alt="Residential Construction" class="image-box-img">
                         <div class="image-box-content">
                             <h3 class="image-box-title">Residential Construction</h3>
-                            <p class="image-box-description">We build beautiful, durable homes tailored to your specific needs and preferences.</p>
+                            <p class="image-box-description">We build modern, durable homes designed for comfort, style, and lasting value.</p>
                         </div>
                     </div>
                 </div>
@@ -188,10 +189,10 @@
                 <!-- Image Box 2 -->
                 <div class="image-box">
                     <div class="image-box-inner">
-                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/RoofingInstall2.jpg" alt="Roofing Service" class="image-box-img">
+                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/RoofingInstall2.jpg" alt="Commercial Development" class="image-box-img">
                         <div class="image-box-content">
-                            <h3 class="image-box-title">Roofing Installation</h3>
-                            <p class="image-box-description">Professional roofing services that protect your property from the elements.</p>
+                            <h3 class="image-box-title">Commercial Development</h3>
+                            <p class="image-box-description">From offices to retail spaces, we deliver functional, high-quality commercial structures.</p>
                         </div>
                     </div>
                 </div>
@@ -199,10 +200,10 @@
                 <!-- Image Box 3 -->
                 <div class="image-box">
                     <div class="image-box-inner">
-                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/Homeinteriorrenovation-GettyImages-892372566-cc34a0e66c7f44bb8665f4d6088676da.jpg.webp" alt="Interior Renovation" class="image-box-img">
+                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/Homeinteriorrenovation-GettyImages-892372566-cc34a0e66c7f44bb8665f4d6088676da.jpg.webp" alt="Interior Design and Renovation" class="image-box-img">
                         <div class="image-box-content">
-                            <h3 class="image-box-title">Interior Renovation</h3>
-                            <p class="image-box-description">Transform your space with our expert interior design and renovation services.</p>
+                            <h3 class="image-box-title">Interior Design & Renovation</h3>
+                            <p class="image-box-description">We revitalize interiors with creative design and expert craftsmanship to enhance every space.</p>
                         </div>
                     </div>
                 </div>
@@ -210,10 +211,10 @@
                 <!-- Image Box 4 -->
                 <div class="image-box">
                     <div class="image-box-inner">
-                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/pexels-skitterphoto-1388944.jpg" alt="Construction Planning" class="image-box-img">
+                        <img src="https://valeconstructionandbuilder.jsnationalhomesupplies.com/wp-content/uploads/2024/09/pexels-skitterphoto-1388944.jpg" alt="Project Planning & Management" class="image-box-img">
                         <div class="image-box-content">
-                            <h3 class="image-box-title">Construction Planning</h3>
-                            <p class="image-box-description">Comprehensive planning services to ensure your project runs smoothly from start to finish.</p>
+                            <h3 class="image-box-title">Project Planning & Management</h3>
+                            <p class="image-box-description">Our expert team ensures each project is delivered on time, within budget, and to perfection.</p>
                         </div>
                     </div>
                 </div>
@@ -233,10 +234,21 @@
             const nextButton = document.querySelector('.carousel-arrow-right');
             
             let currentIndex = 0;
-            const itemsToShow = 3; // Number of items to show at once
+            
+            // Get the number of items to show based on screen width
+            function getItemsToShow() {
+                if (window.innerWidth <= 768) {
+                    return 1;
+                } else if (window.innerWidth <= 992) {
+                    return 2;
+                } else {
+                    return 3;
+                }
+            }
             
             // Calculate the width of each item
             function updateItemWidth() {
+                const itemsToShow = getItemsToShow();
                 const containerWidth = document.querySelector('.carousel-container').offsetWidth;
                 const itemWidth = containerWidth / itemsToShow;
                 
@@ -249,6 +261,7 @@
             
             // Update carousel position
             function updateCarousel() {
+                const itemsToShow = getItemsToShow();
                 const containerWidth = document.querySelector('.carousel-container').offsetWidth;
                 const itemWidth = containerWidth / itemsToShow;
                 const translateX = -currentIndex * itemWidth;
@@ -257,6 +270,7 @@
             
             // Next slide
             function nextSlide() {
+                const itemsToShow = getItemsToShow();
                 const maxIndex = imageBoxes.length - itemsToShow;
                 if (currentIndex < maxIndex) {
                     currentIndex++;
@@ -280,6 +294,12 @@
             updateItemWidth();
             
             // Update on window resize
-            window.addEventListener('resize', updateItemWidth);
+            window.addEventListener('resize', function() {
+                // Reset index when screen size changes to avoid issues
+                currentIndex = 0;
+                updateItemWidth();
+            });
         });
     </script>
+</body>
+</html>
